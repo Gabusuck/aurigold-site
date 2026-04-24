@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURIgold | Avaliação e Compra de Ouro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- ========================================== -->
+    <!-- VISÃO PÚBLICA (CLIENTES)                   -->
+    <!-- ========================================== -->
+    <div id="client-view">
+        <header class="capsule-header-wrapper" id="mainHeader">
+            <div class="capsule-nav">
+                <a href="#" class="logo">AURI<span>gold</span></a>
+                
+                <nav class="inline-links">
+                    <a href="#">Início</a>
+                    <a href="#simulacao">O Simulador</a>
+                    <a href="#servicos">Os Serviços</a>
+                </nav>
+
+                <div class="header-right-actions">
+                    <a href="#contactos" class="btn-capsule">Contacte-nos <span class="arrow">→</span></a>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero-clean">
+            <div class="hero-bg-glow"></div>
+            <div class="hero-content">
+                <div class="mini-quote-card" style="display: inline-flex; margin-bottom: 2rem;">
+                    <div class="dot-indicator"></div>
+                    <div class="quote-info" style="text-align: left;">
+                        <span class="quote-label">Cotação Diária Oficial</span>
+                        <span class="quote-value" id="valor-base-display">A carregar...</span>
+                    </div>
+                </div>
+                <h1 class="catchphrase">Vende com confiança.<br>Compra com <span class="gold-gradient-text">segurança.</span></h1>
+                <p class="hero-subtext">Avaliamos e rentabilizamos o seu património metálico com total sigilo, pagamento imediato e base na mais pura cotação internacional.</p>
+                <div class="hero-actions">
+                    <a href="#simulacao" class="btn btn-primary">Fazer Simulação</a>
+                    <a href="#servicos" class="btn btn-outline">Ver os Nossos Serviços</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="simulacao" class="section-simulator">
+            <div class="container simulator-container">
+                <div class="simulator-split">
+                    <!-- Coluna Esquerda: Instruções -->
+                    <div class="simulator-instructions fade-up-element" style="padding-right: 2rem;">
+                        <span class="golden-subtitle">TRANSPARÊNCIA TOTAL</span>
+                        <h2 class="serif-title" style="margin-bottom: 1.5rem;">O Seu Orçamento em Segundos</h2>
+                        <p style="margin-bottom: 2.5rem; color: var(--text-muted); font-size: 1.15rem;">A AURIgold oferece o sistema de avaliação mais rápido e seguro do mercado. Siga os passos e descubra o valor exato que lhe podemos entregar hoje pelo seu património.</p>
+                        
+                        <div class="instruction-step">
+                            <div class="step-number">1</div>
+                            <div class="step-text">
+                                <h4>Identifique o Ouro</h4>
+                                <p>Verifique as marcas na sua peça (contrastes) ou selecione o grau de pureza aproximado.</p>
+                            </div>
+                        </div>
+                        <div class="instruction-step">
+                            <div class="step-number">2</div>
+                            <div class="step-text">
+                                <h4>Insira o Peso</h4>
+                                <p>Coloque a sua peça numa balança simples e insira o peso para ver o valor imediato.</p>
+                            </div>
+                        </div>
+                        <div class="instruction-step">
+                            <div class="step-number">3</div>
+                            <div class="step-text">
+                                <h4>Pagamento Imediato</h4>
+                                <p>Agende connosco. Garantimos a liquidez do valor em numerário físico na hora.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coluna Direita: Cartão do Simulador -->
+                    <div class="simulator-luxury-card fade-up-element">
+                        <div class="card-inner">
+                            <div class="input-modern">
+                                <label>Quilates (Pureza do Ouro)</label>
+                                <div class="pill-group" id="btnGroupQuilates">
+                                    <button type="button" class="pill-btn" data-val="0.375">9k</button>
+                                    <button type="button" class="pill-btn" data-val="0.585">14k</button>
+                                    <button type="button" class="pill-btn" data-val="0.75">18k</button>
+                                    <button type="button" class="pill-btn active" data-val="0.80">19.2k</button>
+                                    <button type="button" class="pill-btn" data-val="1.0">24k</button>
+                                </div>
+                            </div>
+
+                            <div class="input-modern" style="margin-top:2.5rem;">
+                                <label for="peso" style="margin-bottom: 1rem; display: block;">Peso da Peça</label>
+                                <div class="huge-input-wrapper">
+                                    <input type="number" id="peso" placeholder="Ex: 12.5" step="0.1" min="0" inputmode="decimal" class="huge-num-input">
+                                    <span class="huge-unit">gramas</span>
+                                </div>
+                            </div>
+
+                            <div class="result-divider"></div>
+
+                            <div class="sim-result">
+                                <p>Nós pagamos-lhe (aprox):</p>
+                                <h3 id="resultado-preco">0.00 €</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="atelier" class="section-atelier-z">
+            <div class="container">
+                <div class="section-title text-center" style="margin-bottom: 5rem;">
+                    <h2>Alta Joalharia de Autor</h2>
+                    <p>Peças exclusivas, forjadas por mãos de mestre.</p>
+                </div>
+
+                <!-- Linha 1 -->
+                <div class="atelier-z-row fade-up-element">
+                    <div class="col-single-img">
+                        <img src="images/ring_sketch.png" alt="Desenhos do Anel de Diamantes">
+                    </div>
+                    <div class="col-text">
+                        <span class="golden-subtitle">ESBOÇAR A LENDA</span>
+                        <h3 class="serif-title">O Nascer da Ideia</h3>
+                        <p>Toda a grande obra começa num pedaço de papel. O nosso mestre joalheiro tem dedicado uma vida inteira a idealizar memórias sob rigor milimétrico.</p>
+                        <p>O lápis orienta-se pela mais alta tradição, garantindo peças de proporções únicas para quem exige muito mais do que adornos industriais.</p>
+                    </div>
+                </div>
+
+                <!-- Linha 2 (Reverse) -->
+                <div class="atelier-z-row row-reverse fade-up-element">
+                    <div class="col-single-img">
+                        <img src="images/ring_refining.png" alt="O Refinamento do Ouro">
+                    </div>
+                    <div class="col-text">
+                        <span class="golden-subtitle">BANCADA TRADICIONAL</span>
+                        <h3 class="serif-title">O Refinamento Manual</h3>
+                        <p>Garantimos proporções áureas e uma estabilidade exímia à peça antes de receber a sua luz. Cada curva da base de ouro é cuidadosamente limada e polida à mão.</p>
+                        <p>Os nossos mestres utilizam métodos de precisão centenários diretamente na estaca de trabalho para atingir um acabamento maciço e sublime antes da cravação decorrer.</p>
+                    </div>
+                </div>
+
+                <!-- Linha 3 (Final Piece) -->
+                <div class="atelier-z-row fade-up-element">
+                    <div class="col-single-img">
+                        <img src="images/ring_setting.png" alt="Cravação do Diamante">
+                    </div>
+                    <div class="col-text">
+                        <span class="golden-subtitle">O DETALHE FINAL</span>
+                        <h3 class="serif-title">A Arte da Cravação</h3>
+                        <p>Cada diamante é escolhido com rigor e alinhado manualmente pelas pinças dos nossos artesãos celestiais. Um processo laborioso que não aceita falhas.</p>
+                        <p>A tensão milimétrica do ouro abraça a pedra para criar não apenas um aspeto brilhante, mas uma fixação capaz de suportar séculos de história.</p>
+                    </div>
+                </div>
+
+                <!-- Linha 4 (Eternidade Diamantes) -->
+                <div class="atelier-z-row row-reverse fade-up-element" style="margin-bottom:0;">
+                    <div class="col-single-img">
+                        <img src="images/diamond_ring.png" alt="Anel de diamantes">
+                    </div>
+                    <div class="col-text">
+                        <span class="golden-subtitle">PURA INTEMPORALIDADE</span>
+                        <h3 class="serif-title">O Brilho da Eternidade</h3>
+                        <p>Ostente o pináculo do nosso laboratório artesanal. O contraste majestoso entre o ouro puro e a claridade celestial de diamantes impecáveis é a nossa assinatura máxima de excelência.</p>
+                        <p>Uma obra-prima desenhada para atrair os olhares e imortalizar o seu sucesso a cada reflexo de luz.</p>
+                        <a href="#contactos" class="btn btn-primary" style="margin-top: 1.5rem;">Agendar o Meu Pedido</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicos" class="section-services">
+            <div class="container">
+                <div class="section-title text-center">
+                    <span class="golden-subtitle">PORQUÊ A AURIGOLD?</span>
+                    <h2 class="serif-title">Serviços de Excelência</h2>
+                    <p style="margin-bottom: 4rem; color: var(--text-muted);">Transparência que o seu património merece.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="fade-up-element delay-1">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13"/><path d="M13 3l3 6-4 13"/></svg>
+                            </div>
+                            <h4>Avaliação Especializada</h4>
+                            <p>Avaliação livre de danos com base nos valores oficiais do dia.</p>
+                        </div>
+                    </div>
+                    <div class="fade-up-element delay-2">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h12"/><path d="M4 14h9"/><path d="M19 6a7.7 7.7 0 0 0-5.2-2A7.9 7.9 0 0 0 6 12c0 4.4 3.5 8 7.8 8 2 0 3.8-.8 5.2-2"/></svg>
+                            </div>
+                            <h4>Liquidez Imediata</h4>
+                            <p>Pagamento feito de forma rápida e segura no momento.</p>
+                        </div>
+                    </div>
+                    <div class="fade-up-element delay-3">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                            </div>
+                            <h4>Sigilo e Confiança</h4>
+                            <p>Transações confidenciais com absoluto profissionalismo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contactos" class="section-contact">
+            <div class="contact-glow-bg"></div>
+            <div class="container relative z-10">
+                <div class="section-title text-center">
+                    <span class="golden-subtitle">CONTACTO DIRETO</span>
+                    <h2 class="serif-title">Fale Connosco</h2>
+                    <p style="margin-bottom: 4rem; color: var(--text-muted);">Prestamos um acompanhamento personalizado na máxima confidencialidade.</p>
+                </div>
+                
+                <div class="contact-card fade-up-element">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    </div>
+                    <h3 class="contact-h3">Apoio Exclusivo e Sigiloso</h3>
+                    <p class="contact-desc">O nosso canal de comunicação está preparado para responder com a máxima brevidade. Prima abaixo para iniciar um diálogo encriptado e sem compromisso via WhatsApp.</p>
+                    <a href="https://wa.me/351934178363?text=Ol%C3%A1%20AURIgold%2C%20tenho%20interesse%20em%20saber%20mais%20informa%C3%A7%C3%B5es!" target="_blank" class="btn-whatsapp pulse-wa">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="whatsapp-icon"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                        Conversar no WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+        <footer class="clean-footer">
+            <div class="container text-center">
+                <p>AURIgold © 2026 <span id="secretAdminBtn" style="color: rgba(255,255,255,0.05); cursor: pointer; margin-left: 20px; font-size: 0.70rem;">Admin</span></p>
+            </div>
+        </footer>
+    </div>
+
+
+    <!-- ========================================== -->
+    <!-- VISÃO PRIVADA (ADMINISTRAÇÃO Oculta)       -->
+    <!-- ========================================== -->
+    <div id="admin-view" class="admin-overlay hidden">
+        <div class="admin-panel" id="loginArea">
+            <h2 class="logo-large mb-2">AURI<span class="gold-text">Admin</span></h2>
+            <p class="text-muted mb-4">Acesso Reservado</p>
+            
+            <div class="input-group text-left" style="margin-bottom: 1.5rem;">
+                <label style="display:block; margin-bottom: 0.5rem; color:#8b8b9e; font-size: 0.8rem; text-transform:uppercase;">Senha de Acesso</label>
+                <input type="password" id="password" placeholder="Pass: ouro2026" class="admin-input">
+            </div>
+            
+            <button id="btnLogin" class="btn btn-primary w-100">Entrar</button>
+            <p id="loginError" class="error-msg hidden">Password incorreta!</p>
+            <button class="btn btn-outline w-100 mt-2" onclick="fecharAdmin()">Voltar ao Site</button>
+        </div>
+
+        <div class="admin-panel hidden" id="dashboardArea">
+            <h2 class="mb-2 gold-text" style="font-size:1.8rem; margin-bottom:1rem;">Gestão de Preços</h2>
+            <p class="text-muted mb-4" style="font-size:0.9rem;">Insira a cotação base para **Ouro 24k** e o valor a subtrair de margem de lucro por grama.</p>
+
+            <div class="input-group text-left" style="margin-bottom: 1.5rem;">
+                <label style="display:block; margin-bottom: 0.5rem; color:#8b8b9e; font-size: 0.8rem; text-transform:uppercase;">Valor diário por Grama 24K (€)</label>
+                <!-- Alterado inputmode para text para nunca bloquear de forma silenciosa por ter virgulas locadas -->
+                <input type="text" inputmode="decimal" id="newCotacao" placeholder="Ex: 75,50" class="admin-input">
+            </div>
+
+            <div class="input-group text-left" style="margin-bottom: 1.5rem;">
+                <label style="display:block; margin-bottom: 0.5rem; color:#8b8b9e; font-size: 0.8rem; text-transform:uppercase;">Margem a Subtrair por Grama (€)</label>
+                <input type="text" inputmode="decimal" id="newMargem" placeholder="Ex: 15,00" class="admin-input">
+            </div>
+
+            <button id="btnSave" class="btn btn-primary w-100">Gravar Valores (e Atualizar Site)</button>
+            <p id="saveMsg" class="success-msg hidden">Sucesso!</p>
+            
+            <button class="btn btn-outline w-100 mt-2" style="background:#1a1a1a;" onclick="fecharAdmin()">Sair e Ver o Site</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+</body>
+</html>
