@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if(btnLogin) {
         btnLogin.addEventListener('click', () => {
-            if (inputPass.value === 'ouro2026') {
+            if (inputPass.value === 'aurigold2003') {
                 loginArea.classList.add('hidden');
                 dashboardArea.classList.remove('hidden');
                 // Mostra a cotação salva atual
@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!isNaN(valorCorretoNumerico) && valorCorretoNumerico > 0 && !isNaN(margemNumerica) && margemNumerica >= 0) {
                 
                 // Validação de segurança no Frontend
-                if (inputPass.value !== 'ouro2026') {
+                if (inputPass.value !== 'aurigold2003') {
                     saveMsg.innerText = "Password incorreta!";
                     saveMsg.classList.remove('hidden');
                     saveMsg.style.color = '#ff4d4d';
