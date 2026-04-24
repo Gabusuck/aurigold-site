@@ -14,10 +14,23 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo(0,0);
     }
 
-    // Volta ao site normal
+    // Volta ao site normal e faz logout
     window.fecharAdmin = function() {
         adminView.classList.add('hidden');
         clientView.classList.remove('hidden');
+        
+        // Fazer "logout" para pedir a password da próxima vez
+        const loginArea = document.getElementById('loginArea');
+        const dashboardArea = document.getElementById('dashboardArea');
+        const inputPass = document.getElementById('password');
+        
+        if (loginArea && dashboardArea) {
+            dashboardArea.classList.add('hidden');
+            loginArea.classList.remove('hidden');
+        }
+        if (inputPass) {
+            inputPass.value = ''; // Limpar a password que foi digitada
+        }
     }
 
     // Se clicar no cadeado invisivel no topo direito!
