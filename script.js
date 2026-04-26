@@ -12,6 +12,27 @@ document.addEventListener('DOMContentLoaded', () => {
         adminView.classList.remove('hidden');
         clientView.classList.add('hidden');
         window.scrollTo(0,0);
+        
+        // Atualizar Relógio e Data no Painel
+        atualizarRelogioAdmin();
+        if (!window.adminClockInterval) {
+            window.adminClockInterval = setInterval(atualizarRelogioAdmin, 1000);
+        }
+    }
+
+    function atualizarRelogioAdmin() {
+        const clockEl = document.getElementById('admin-clock');
+        const dateEl = document.getElementById('admin-date');
+        if (!clockEl || !dateEl) return;
+
+        const agora = new Date();
+        clockEl.innerText = agora.toLocaleTimeString('pt-PT');
+        dateEl.innerText = agora.toLocaleDateString('pt-PT', { 
+            weekday: 'long', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        });
     }
 
     // Volta ao site normal e faz logout
@@ -19,6 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
         adminView.classList.add('hidden');
         clientView.classList.remove('hidden');
         
+        // Parar Relógio
+        if (window.adminClockInterval) {
+            clearInterval(window.adminClockInterval);
+            window.adminClockInterval = null;
+        }
+
         // Fazer "logout" para pedir a password da próxima vez
         const loginArea = document.getElementById('loginArea');
         const dashboardArea = document.getElementById('dashboardArea');
@@ -357,13 +384,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     if (error) {
                         console.error(error);
-                        alert("ERRO: " + error.message);
+                        saveMsg.innerText = "Erro ao atualizar Ouro";
+                        saveMsg.classList.remove('hidden');
+                        saveMsg.style.background = "#ff4d4d";
                     } else {
                         await refletirCotacaoNoSite(); 
-                        saveMsg.innerText = "Ouro Atualizado!";
+                        saveMsg.innerText = "Ouro Atualizado com Sucesso!";
+                        saveMsg.style.background = "#1da851";
                         saveMsg.classList.remove('hidden');
-                        alert("Sucesso! O preço do Ouro foi atualizado no site.");
-                        setTimeout(() => saveMsg.classList.add('hidden'), 3000);
+                        setTimeout(() => saveMsg.classList.add('hidden'), 4000);
                     }
                 } catch (error) { 
                     console.error(error);
@@ -403,13 +432,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     if (error) {
                         console.error(error);
-                        alert("ERRO: " + error.message + "\n\nVerificou se adicionou as colunas no Supabase?");
+                        saveMsg.innerText = "Erro ao atualizar Prata";
+                        saveMsg.classList.remove('hidden');
+                        saveMsg.style.background = "#ff4d4d";
                     } else {
                         await refletirCotacaoNoSite(); 
-                        saveMsg.innerText = "Prata Atualizada!";
+                        saveMsg.innerText = "Prata Atualizada com Sucesso!";
+                        saveMsg.style.background = "#1da851";
                         saveMsg.classList.remove('hidden');
-                        alert("Sucesso! O preço da Prata foi atualizado no site.");
-                        setTimeout(() => saveMsg.classList.add('hidden'), 3000);
+                        setTimeout(() => saveMsg.classList.add('hidden'), 4000);
                     }
                 } catch (error) { 
                     console.error(error);
